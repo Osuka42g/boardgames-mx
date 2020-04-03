@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Button, Checkbox, Form } from 'semantic-ui-react'
+
 import Header from './Header';
 
 const layoutStyle = {
@@ -19,11 +21,13 @@ const Layout = props => {
   return (
     <div style={layoutStyle}>
       <Header />
-      <h3>Búsqueda</h3>
-      <form onSubmit={submitted}>
-        <input name="searchTerm" className="search-term" onChange={e => setSearchTerm(e.target.value)} />
-        <button type="submit" />
-      </form>
+      <Form onSubmit={submitted}>
+        <Form.Field>
+          <label>Búsqueda</label>
+          <input placeholder='' name="searchTerm" className="search-term" onChange={e => setSearchTerm(e.target.value)} />
+          <Button type="submit" />
+        </Form.Field>
+      </Form>
       {props.children}
     </div>
   )

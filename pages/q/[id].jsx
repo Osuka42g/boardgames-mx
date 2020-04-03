@@ -1,6 +1,5 @@
 import Layout from '../../components/Layout';
-import fetch from 'isomorphic-unfetch';
-import cheerio from "cheerio";
+import getItems from '../../queries';
 
 const Query = props => (
   <Layout>
@@ -18,10 +17,7 @@ const Query = props => (
 
 Query.getInitialProps = async (context) => {
   const { id } = context.query;
-  const res = await fetch(`https://www.searchanise.com/getresults?api_key=4L0X2L9C1T&q=${id}&items=true`);
-  const result = await res.json();
-
-  const items = result.items.map(e => ({ ...e, vendor: 'El Reino' }));
+  const items = await getItems(id) || [];
 
   return { items };
 };
