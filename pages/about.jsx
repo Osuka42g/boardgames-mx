@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div>
       <Layout>
-        <p>This is the about page</p>
+        <p>boardgames-mx</p>
       </Layout>
     </div>
   );
