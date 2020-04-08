@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card as C } from 'semantic-ui-react';
+import { Card as C, Message } from 'semantic-ui-react';
 
 import Layout from '../../components/Layout';
 import Card from '../../components/Card';
@@ -29,6 +29,7 @@ const SearchResults = ({ searchTerm, items }) => {
   return (
     <Layout searchTerm={searchTerm}>
       {body}
+      <Message floating>Nota: no se garantiza la disponibilidad de cada artículo; los productos mostrados son el resultado de la búsqueda en cada sitio.</Message>
     </Layout>
   );
 };

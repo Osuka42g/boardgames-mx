@@ -5,6 +5,7 @@ const toFixed = q => `${parseFloat(q).toFixed(2)}`;
 const parseItem = item => ({
   title: item.title,
   image: item.image_link,
+  shopURL: item.link,
   price: toFixed(item.price),
   vendor: 'El Reino',
 });

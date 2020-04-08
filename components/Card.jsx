@@ -3,7 +3,7 @@ import { Card, Image, Button } from 'semantic-ui-react';
 
 const toVaros = s => `$${s}`;
 
-export default ({ key, imageSrc, price, vendor, title, shopURL }) => {
+export default ({ imageSrc, price, vendor, title, shopURL }) => {
 
   const openVendorPage = url => {
     const win = window.open(url, '_blank');
@@ -11,7 +11,7 @@ export default ({ key, imageSrc, price, vendor, title, shopURL }) => {
   };
 
   return (
-    <Card key={key}>
+    <Card>
       <Image src={imageSrc} size="medium" onClick={() => openVendorPage(shopURL)}/>
       <Card.Content>
         <Card.Header>{title}</Card.Header>
@@ -22,7 +22,7 @@ export default ({ key, imageSrc, price, vendor, title, shopURL }) => {
           {toVaros(price)}
         </Card.Description>
         <Card.Content extra>
-          <Button basic color='green'>
+          <Button basic color='green' onClick={() => openVendorPage(shopURL)}>
             Encontrado en {vendor}
           </Button>
         </Card.Content>
