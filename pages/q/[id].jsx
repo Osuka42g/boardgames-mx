@@ -3,7 +3,7 @@ import { Card as C, Message } from 'semantic-ui-react';
 
 import Layout from '../../components/Layout';
 import Card from '../../components/Card';
-import getItems from '../../queries';
+import getItems from '../../scrappers';
 
 const SearchResults = ({ searchTerm, items }) => {
 

@@ -1,6 +1,3 @@
-import { useState } from 'react';
-import { Button, Form, } from 'semantic-ui-react';
-
 import Header from './Header';
 import SearchForm from '../components/SearchForm';
 
