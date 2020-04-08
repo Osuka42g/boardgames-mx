@@ -1,11 +1,11 @@
 import fetch from 'isomorphic-unfetch';
 
-const toPesos = q => `$${parseFloat(q).toFixed(2)}`;
+const toFixed = q => `${parseFloat(q).toFixed(2)}`;
 
 const parseItem = item => ({
   title: item.title,
   image: item.image_link,
-  price: toPesos(item.price),
+  price: toFixed(item.price),
   vendor: 'El Reino',
 });
 

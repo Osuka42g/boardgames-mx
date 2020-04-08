@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button, Form, } from 'semantic-ui-react';
 
 import Header from './Header';
+import SearchForm from '../components/SearchForm';
 
 const layoutStyle = {
   margin: 20,
@@ -10,23 +11,19 @@ const layoutStyle = {
 };
 
 const Layout = props => {
-  const [searchTerm, setSearchTerm] = useState(props.searchTerm || '');
-
-  const submitted = e => {
-    e.preventDefault();
-    document.location.href = `/q/${searchTerm}`
+  const submitted = term => {
+    if (term) {
+      document.location.href = `/q/${term}`;
+    }
   }
 
   return (
     <div style={layoutStyle}>
       <Header />
-      <Form onSubmit={submitted}>
-        <Form.Field>
-          <label>Búsqueda</label>
-          <input placeholder='' name="searchTerm" className="search-term" onChange={e => setSearchTerm(e.target.value)} value={searchTerm} />
-          <Button type="submit">Go!</Button>
-        </Form.Field>
-      </Form>
+      <SearchForm
+        onSubmit={submitted}
+        initialSearchTerm={props.searchTerm}
+      />
       {props.children}
     </div>
   )
