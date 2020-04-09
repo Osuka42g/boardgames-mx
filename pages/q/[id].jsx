@@ -1,4 +1,3 @@
-import React from 'react';
 import { Card as C, Message } from 'semantic-ui-react';
 
 import Layout from '../../components/Layout';

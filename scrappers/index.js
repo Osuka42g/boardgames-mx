@@ -9,7 +9,7 @@ const getItems = async item => {
 
   const stores = [
     elReino,
-    // elDuende,
+    elDuende,
   ];
 
   const storesQuery = stores.map(e => e(item));

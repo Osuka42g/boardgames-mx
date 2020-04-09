@@ -1,11 +1,13 @@
 import fetch from 'isomorphic-unfetch';
 
+const vendor = 'El Reino';
+
 const parseItem = item => ({
   title: item.title,
   image: item.image_link,
   shopURL: item.link,
   price: parseFloat(item.price),
-  vendor: 'El Reino',
+  vendor,
 });
 
 const elReino = async query => {

@@ -1,30 +1,30 @@
 import fetch from 'isomorphic-unfetch';
-import cheerio from 'cheerio';
+
+const vendor = 'El Duende';
+
+const stripHtml = q => q.replace(/<\/?[^>]+(>|$)/g, "");
+
+const parseItem = item => ({
+  title: stripHtml(item.title),
+  image: item.image,
+  shopURL: item.link,
+  price: parseFloat(item.f_price),
+  vendor,
+});
 
 const elDuende = async query => {
-  const res = await fetch(`https://www.elduende.com.mx/?s=${query}&post_type=product&type_aws=true`);
-  const content = await res.text();
+  const res = await fetch('https://www.elduende.com.mx/?wc-ajax=aws_action', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
+    },
+    body: `keyword=${query}&typedata=json`
+  });
+  const result = await res.json();
 
-  const $ = cheerio.load(content);
-  const result = $('.woocommerce-loop-product__title').data();
-  console.log("result:", result);
-  // return content.items.map(e => ({ ...e, vendor: 'El Duende' }));
-  return result;
+  const items = result.products.map(parseItem);
+
+  return items;
 };
 
 export default elDuende;
-
-
-// Query.getInitialProps = async (context) => {
-//   const { id } = context.query;
-//   const res = await fetch(`https://www.elduende.com.mx/?s=coup&post_type=product&type_aws=true`);
-//   const content = await res.text();
-//   console.log('content', content);
-
-//   const $ = cheerio.load(content);
-//   const result = $('span').text();
-
-//   console.log('result', result);
-
-//   return { content: result };
-// };
