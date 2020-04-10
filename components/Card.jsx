@@ -12,7 +12,7 @@ export default ({ imageSrc, price, vendor, title, shopURL }) => {
 
   return (
     <Card>
-      <Image src={imageSrc} size="medium" onClick={() => openVendorPage(shopURL)}/>
+      <Image src={imageSrc} size="small" centered onClick={() => openVendorPage(shopURL)}/>
       <Card.Content>
         <Card.Header>{title}</Card.Header>
         <Card.Meta>
@@ -22,7 +22,7 @@ export default ({ imageSrc, price, vendor, title, shopURL }) => {
           {toVaros(price)}
         </Card.Description>
         <Card.Content extra>
-          <Button basic color='green' onClick={() => openVendorPage(shopURL)}>
+          <Button basic fluid color='teal' onClick={() => openVendorPage(shopURL)}>
             Encontrado en {vendor}
           </Button>
         </Card.Content>
