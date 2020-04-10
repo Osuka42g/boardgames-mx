@@ -1,5 +1,6 @@
 import _ from 'lodash';
 
+import { promiseAllTimeout } from '../utils';
 import { isCached, getCache, putCache, } from '../utils/cache';
 
 import elReino from './elReino';
@@ -7,6 +8,8 @@ import elDuende from './elDuende';
 import naluaJuegos from './naluaJuegos';
 
 import { byPrice } from '../utils'
+
+const nineSeconds = 9 * 1000;
 
 const getItems = async item => {
 
@@ -22,7 +25,7 @@ const getItems = async item => {
 
   const storesQuery = stores.map(e => e(item));
 
-  const items = await Promise.all(storesQuery);
+  const items = await promiseAllTimeout(storesQuery, nineSeconds);
 
   const flattenItems = _.flatten(items);
   const sortedItems = flattenItems.sort(byPrice);
