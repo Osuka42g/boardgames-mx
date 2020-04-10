@@ -33,7 +33,6 @@ const elReino = async query => {
       price,
     });
 
-    console.log('item :', item);
     items.push(item);
   });
 
