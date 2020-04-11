@@ -8,8 +8,6 @@ function fetcher(url) {
 export default function Index() {
 
   return (
-    <Layout>
-
-    </Layout>
+    <Layout title="Boardgames-mx"></Layout>
   );
 }

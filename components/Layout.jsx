@@ -1,3 +1,4 @@
+import Head from 'next/Head';
 import Header from './Header';
 import SearchForm from '../components/SearchForm';
 
@@ -14,15 +15,23 @@ const Layout = props => {
     }
   }
 
+  const title = props.title || "Boardgames-mx";
+
   return (
-    <div style={layoutStyle}>
-      <Header />
-      <SearchForm
-        onSubmit={submitted}
-        initialSearchTerm={props.searchTerm}
-      />
-      {props.children}
-    </div>
+    <>
+      <Head>
+        <title>{props.title}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <div style={layoutStyle}>
+        <Header />
+        <SearchForm
+          onSubmit={submitted}
+          initialSearchTerm={props.searchTerm}
+        />
+        {props.children}
+      </div>
+    </>
   )
 };
 
