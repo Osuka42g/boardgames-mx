@@ -13,7 +13,6 @@ export const isCached = key => {
 };
 
 export const getCache = key => {
-  console.log('cache[key].value :', cache[key].value);
   if (cache[key]) {
     return cache[key].value;
   }
