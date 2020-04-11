@@ -1,4 +1,4 @@
-import Head from 'next/Head';
+import Head from 'next/head';
 import Header from './Header';
 import SearchForm from '../components/SearchForm';
 
