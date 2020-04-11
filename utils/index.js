@@ -1,3 +1,5 @@
+import stringSimilarity from 'string-similarity';
+
 export const byPrice = (a, b) => {
   if (a.price < b.price) {
     return -1;
@@ -7,6 +9,20 @@ export const byPrice = (a, b) => {
   }
   return 0;
 };
+
+export const byRelation = (a, b) => {
+  if (a.relation < b.relation) {
+    return 1;
+  }
+  if (a.relation > b.relation) {
+    return -1;
+  }
+  return 0;
+};
+
+export const relation = (first, second) => {
+  return stringSimilarity.compareTwoStrings(first, second);
+}
 
 // from perry-mitchell code: https://gist.github.com/perry-mitchell/dfe8becce634689206725af318b44445
 export function promiseAllTimeout(promises, timeout, resolvePartial = true) {

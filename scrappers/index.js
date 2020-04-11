@@ -8,7 +8,7 @@ import elDuende from './elDuende';
 import naluaJuegos from './naluaJuegos';
 import kawaGames from './kawaGames';
 
-import { byPrice } from '../utils'
+import { byPrice, relation } from '../utils';
 
 const tiemout = 8 * 1000; // 8 secs
 
@@ -30,11 +30,15 @@ const getItems = async item => {
   const items = await promiseAllTimeout(storesQuery, tiemout);
 
   const flattenItems = _.flatten(items);
-  const sortedItems = flattenItems.sort(byPrice);
+  const relationItems = flattenItems.map(e => ({ ...e, relation: relation(item, e.title) }));
+  const totallyRelatedItems = relationItems.filter(e => e.relation >= 0.1);
+  const notRelatedItems = relationItems.filter(e => e.relation < 0.1);
 
-  putCache(item, sortedItems);
+  const finallyItems = [...totallyRelatedItems.sort(byPrice), ...notRelatedItems.sort(byPrice)];
 
-  return sortedItems;
+  putCache(item, finallyItems);
+
+  return finallyItems;
 };
 
 export default getItems;
