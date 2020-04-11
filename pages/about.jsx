@@ -8,7 +8,7 @@ export default function About() {
         <Container text style={{ marginTop: 42 }}>
           <p>El objetivo es tener un buscador de juegos de mesa en todas las tiendas en linea de juegos en México.</p>
           <p>Contáctame si deseas añadir tu tienda o tienes alguna sugerencia.</p>
-          <p>Me encantaría leer feedback.</p>
+          <p>Me encantaría leer feedback, y si encuentras bugs porfavor mándamelos!.</p>
           <p>
             <ul>
               <p><a href="mailto:mxboardgames@gmail.com"><Icon name="mail" />mxboardgames@gmail.com</a></p>
