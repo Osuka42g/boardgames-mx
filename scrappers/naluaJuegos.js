@@ -11,7 +11,7 @@ const parseItem = item => ({
   vendor,
 });
 
-const elReino = async query => {
+const naluaJuegos = async query => {
   const productsSelector = '.ajax_block_product > article';
 
   const res = await fetch(`https://naluajuegos.com/index.php?fc=module&module=leoproductsearch&controller=productsearch&cate=&search_query=${query}`);
@@ -39,4 +39,4 @@ const elReino = async query => {
   return items;
 };
 
-export default elReino;
+export default naluaJuegos;

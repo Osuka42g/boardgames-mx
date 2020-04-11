@@ -20,7 +20,7 @@ const Layout = props => {
   return (
     <>
       <Head>
-        <title>{props.title}</title>
+        <title>{title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div style={layoutStyle}>

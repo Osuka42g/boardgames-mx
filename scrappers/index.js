@@ -6,6 +6,7 @@ import { isCached, getCache, putCache, } from '../utils/cache';
 import elReino from './elReino';
 import elDuende from './elDuende';
 import naluaJuegos from './naluaJuegos';
+import kawaGames from './kawaGames';
 
 import { byPrice } from '../utils'
 
@@ -21,6 +22,7 @@ const getItems = async item => {
     elReino,
     elDuende,
     naluaJuegos,
+    kawaGames,
   ];
 
   const storesQuery = stores.map(e => e(item));
