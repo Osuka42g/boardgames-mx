@@ -10,7 +10,7 @@ import kawaGames from './kawaGames';
 
 import { byPrice } from '../utils'
 
-const nineSeconds = 9 * 1000;
+const tiemout = 8 * 1000; // 8 secs
 
 const getItems = async item => {
 
@@ -27,7 +27,7 @@ const getItems = async item => {
 
   const storesQuery = stores.map(e => e(item));
 
-  const items = await promiseAllTimeout(storesQuery, nineSeconds);
+  const items = await promiseAllTimeout(storesQuery, tiemout);
 
   const flattenItems = _.flatten(items);
   const sortedItems = flattenItems.sort(byPrice);
