@@ -1,5 +1,8 @@
 import cheerio from 'cheerio';
 import fetch from 'isomorphic-unfetch';
+import logger from '../utils/logger';
+
+const log = logger('Fetch KawaGames');
 
 const vendor = 'KawaGames';
 
@@ -59,19 +62,23 @@ const useSingleProduct = async (itemName, productURL) => {
 };
 
 const kawaGames = async query => {
+  try {
+    const isThereAnyGame = await fetch(`https://kawagames.com.mx/?wc-ajax=dgwt_wcas_ajax_search&s=${query}`);
+    const isThere = await isThereAnyGame.json();
 
-  const isThereAnyGame = await fetch(`https://kawagames.com.mx/?wc-ajax=dgwt_wcas_ajax_search&s=${query}`);
-  const isThere = await isThereAnyGame.json();
+    if (isThere.total === 0) return [];
+    if (isThere.total === 1) {
+      const urlFetch = isThere.suggestions[0].url;
+      const item = await useSingleProduct(query, urlFetch);
+      return [item];
+    };
 
-  if (isThere.total === 0) return [];
-  if (isThere.total === 1) {
-    const urlFetch = isThere.suggestions[0].url;
-    const item = await useSingleProduct(query, urlFetch);
-    return [item];
-  };
-
-  const items = await useRobustSearch(query);
-  return items;
+    const items = await useRobustSearch(query);
+    return items;
+  } catch (err) {
+    log(err);
+    return [];
+  }
 };
 
 export default kawaGames;

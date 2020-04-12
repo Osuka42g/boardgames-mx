@@ -1,4 +1,7 @@
 import fetch from 'isomorphic-unfetch';
+import logger from '../utils/logger';
+
+const log = logger('Fetch El Reino');
 
 const vendor = 'El Reino';
 
@@ -11,10 +14,15 @@ const parseItem = item => ({
 });
 
 const elReino = async query => {
-  const res = await fetch(`https://www.searchanise.com/getresults?api_key=4L0X2L9C1T&q=${query}`);
-  const result = await res.json();
+  try {
+    const res = await fetch(`https://www.searchanise.com/getresults?api_key=4L0X2L9C1T&q=${query}`);
+    const result = await res.json();
 
-  return result.items.map(parseItem);
+    return result.items.map(parseItem);
+  } catch (err) {
+    log(err);
+    return [];
+  }
 };
 
 export default elReino;
