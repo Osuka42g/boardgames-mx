@@ -1,34 +1,38 @@
 import { useState } from 'react';
-import { Form, Input, Button } from 'semantic-ui-react';
+import { Form, Input, } from 'semantic-ui-react';
 
 const styles = {
-  formField: {
-    width: '500px',
-  },
   input: {
-    width: '400px',
-  },
+    marginBottom: '1.5rem'
+  }
 };
 
 const SearchForm = ({ onSubmit, initialSearchTerm = ""}) => {
   const [searchTerm, setSearchTerm] = useState(initialSearchTerm);
+  const [isLoading, setLoading] = useState(false);
+
+  const onFormSubmitted = () => {
+    onSubmit(searchTerm);
+    setLoading(true);
+  };
 
   return (
-    <Form onSubmit={() => onSubmit(searchTerm)}>
-      <Form.Group>
-        <Form.Field styles={styles.formField} inline>
-          <Input
-            name="searchTerm"
-            className="search-term"
-            onChange={e => setSearchTerm(e.target.value)}
-            value={searchTerm}
-            tabIndex={0}
-            label={"🔎"}
-            style={styles.input}
-          />
-          <Button content='Go!' primary />
-        </Form.Field>
-      </Form.Group>
+    <Form onSubmit={onFormSubmitted}>
+      <Input
+        name="searchTerm"
+        className="search-term"
+        onChange={e => setSearchTerm(e.target.value)}
+        value={searchTerm}
+        tabIndex={0}
+        loading={isLoading}
+        iconPosition={isLoading ? 'left' : null}
+        style={styles.input}
+        fluid
+        action={{
+          color: 'teal',
+          content: 'Go!',
+        }}
+      />
     </Form >
   )
 };
