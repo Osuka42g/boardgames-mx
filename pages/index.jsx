@@ -13,7 +13,7 @@ const Image = ({ href, logoSrc, }) => <SemanticImage
 export default function Index() {
 
   return (
-    <Layout title="Boardgames-mx">
+    <Layout title="Mesa de Juegos">
       <Container fluid>
         <Header as='h1'>Buscador de Juegos de Mesa México</Header>
         <p>Usa el buscador de arriba para encontrar cualquier juego. Sólo tiendas nacionales.</p>

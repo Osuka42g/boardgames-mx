@@ -15,7 +15,7 @@ const Layout = props => {
     }
   }
 
-  const title = props.title || "Boardgames-mx";
+  const title = props.title || "Mesa de Juegos";
 
   return (
     <>
