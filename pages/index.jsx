@@ -27,6 +27,10 @@ export default function Index() {
           href='https://www.elreino.mx'
         />
         <Image
+          logoSrc='JuegaMas.png'
+          href='http://juegamas.mx'
+        />
+        <Image
           logoSrc='KawaGames.jpg'
           href='https://kawagames.com.mx'
         />

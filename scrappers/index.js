@@ -6,6 +6,7 @@ import logger from '../utils/logger';
 
 import elReino from './elReino';
 import elDuende from './elDuende';
+import juegaMas from './juegaMas';
 import naluaJuegos from './naluaJuegos';
 import kawaGames from './kawaGames';
 
@@ -24,6 +25,7 @@ const getItems = async item => {
     const stores = [
       elReino,
       elDuende,
+      juegaMas,
       naluaJuegos,
       kawaGames,
     ];
