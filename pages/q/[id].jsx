@@ -26,7 +26,13 @@ const SearchResults = ({ searchTerm, items }) => {
     <p>Sin resultados :(</p>;
 
   return (
-    <Layout searchTerm={searchTerm} title={`Mesa de Juegos : Resultados para ${searchTerm}`}>
+    <Layout
+      searchTerm={searchTerm}
+      metas={{
+        title: `Resultados para ${searchTerm}`,
+        description: `Artículos de la búsqueda para ${searchTerm}, se encontraron ${items.length} resultados en tiendas de México.`,
+      }}
+    >
       {body}
       <Message floating>Nota: no se garantiza la disponibilidad y precio de cada artículo; los productos mostrados son el resultado de la búsqueda en cada sitio.</Message>
     </Layout>
