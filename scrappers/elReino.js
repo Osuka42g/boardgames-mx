@@ -18,7 +18,9 @@ const elReino = async query => {
     const res = await fetch(`https://www.searchanise.com/getresults?api_key=4L0X2L9C1T&q=${query}`);
     const result = await res.json();
 
-    return result.items.map(parseItem);
+    const without0Quantity = result.items.filter(e => e.quantity !== "0");
+
+    return without0Quantity.map(parseItem);
   } catch (err) {
     log(err);
     return [];

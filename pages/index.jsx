@@ -17,7 +17,7 @@ export default function Index() {
       <Container fluid>
         <Header as='h1'>Buscador de Juegos de Mesa México</Header>
         <p>Usa el buscador de arriba para encontrar cualquier juego. Sólo tiendas nacionales.</p>
-        <Header as='h3'>En qué tiendas busca?</Header>
+        <Header as='h3'>El buscador corre en las siguiente tiendas:</Header>
         <Image
           logoSrc='ElDuende.png'
           href='https://www.elduende.com.mx'
