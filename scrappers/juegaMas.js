@@ -25,6 +25,10 @@ const juegaMas = async query => {
     const items = [];
 
     $(productsSelector).each((_, el) => {
+      const isOutStock = Boolean($(el).find('.availability.out-of-stock').toArray().length);
+
+      if (isOutStock) return;
+
       const shopURL = $(el).find('a').attr("href");
       const image = $(el).find('img').attr("src");
       const title = $(el).find('.product-name').text().trim();
