@@ -30,7 +30,9 @@ __Current implemented stores__
 - elreino.mx
 - elduende.com.mx
 - kawagames.com.mx
+- juegamas.mx
 - naluajuegos.com
+- nidogeek.com
 
 
 Please raise an Issue if you find a bug or have any suggestion!

@@ -8,6 +8,7 @@ import elReino from './elReino';
 import elDuende from './elDuende';
 import juegaMas from './juegaMas';
 import naluaJuegos from './naluaJuegos';
+import nidoGeek from './nidoGeek';
 import kawaGames from './kawaGames';
 
 import { byPrice, relation } from '../utils';
@@ -27,6 +28,7 @@ const getItems = async item => {
       elDuende,
       juegaMas,
       naluaJuegos,
+      nidoGeek,
       kawaGames,
     ];
 

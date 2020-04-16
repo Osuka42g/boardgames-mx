@@ -1,12 +1,16 @@
 import { Flag, Container, Header, Image as SemanticImage, } from 'semantic-ui-react'
 import Layout from '../components/Layout';
 
-const Image = ({ href, logoSrc, }) => <SemanticImage
+const Image = ({ href, logoSrc, atl, }) => <SemanticImage
   src={`logos/${logoSrc}`}
   size='small'
   as='a'
   href={href}
   target='_blank'
+  style={{
+    margin: '1.5rem',
+  }}
+  alt={alt}
   wrapped
 />
 
@@ -20,23 +24,33 @@ export default function Index() {
         <Header as='h3'>El buscador corre en las siguiente tiendas:</Header>
         <Image
           logoSrc='ElDuende.png'
+          alt='El Duende'
           href='https://www.elduende.com.mx'
         />
         <Image
           logoSrc='ElReino.png'
+          alt='El Reino'
           href='https://www.elreino.mx'
         />
         <Image
           logoSrc='JuegaMas.png'
+          alt='Juega+ Jugueterías'
           href='http://juegamas.mx'
         />
         <Image
           logoSrc='KawaGames.jpg'
+          alt='KawaGames'
           href='https://kawagames.com.mx'
         />
         <Image
           logoSrc='NaluaJuegos.jpg'
+          alt='Nalua Juegos'
           href='https://naluajuegos.com'
+        />
+        <Image
+          logoSrc='NidoGeek.png'
+          alt='Nido Geek'
+          href='https://nidogeek.com'
         />
         <br />
         <a href="mailto:mxboardgames@gmail.com">
