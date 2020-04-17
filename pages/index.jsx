@@ -32,11 +32,11 @@ export default function Index() {
           alt='El Reino'
           href='https://www.elreino.mx'
         />
-        <Image
+        {/* <Image
           logoSrc='GeekyStuff.png'
           alt='Geeky Stuff'
           href='https://geekystuff.mx'
-        />
+        /> */}
         <Image
           logoSrc='JuegaMas.png'
           alt='Juega+ Jugueterías'
