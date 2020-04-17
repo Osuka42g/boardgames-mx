@@ -13,7 +13,7 @@ const SearchForm = ({ onSubmit, initialSearchTerm = ""}) => {
 
   const onFormSubmitted = () => {
     onSubmit(searchTerm);
-    setLoading(true);
+    searchTerm && setLoading(true);
   };
 
   return (

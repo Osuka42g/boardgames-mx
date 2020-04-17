@@ -1,7 +1,7 @@
 import { Flag, Container, Header, Image as SemanticImage, } from 'semantic-ui-react'
 import Layout from '../components/Layout';
 
-const Image = ({ href, logoSrc, atl, }) => <SemanticImage
+const Image = ({ href, logoSrc, alt, }) => <SemanticImage
   src={`logos/${logoSrc}`}
   size='small'
   as='a'
@@ -31,6 +31,11 @@ export default function Index() {
           logoSrc='ElReino.png'
           alt='El Reino'
           href='https://www.elreino.mx'
+        />
+        <Image
+          logoSrc='GeekyStuff.png'
+          alt='Geeky Stuff'
+          href='https://geekystuff.mx'
         />
         <Image
           logoSrc='JuegaMas.png'

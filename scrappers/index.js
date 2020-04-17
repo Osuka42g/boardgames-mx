@@ -6,6 +6,7 @@ import logger from '../utils/logger';
 
 import elReino from './elReino';
 import elDuende from './elDuende';
+import geekyStuff from './geekyStuff';
 import juegaMas from './juegaMas';
 import naluaJuegos from './naluaJuegos';
 import nidoGeek from './nidoGeek';
@@ -26,6 +27,7 @@ const getItems = async item => {
     const stores = [
       elReino,
       elDuende,
+      geekyStuff,
       juegaMas,
       naluaJuegos,
       nidoGeek,
