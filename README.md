@@ -33,6 +33,7 @@ __Current implemented stores__
 - juegamas.mx
 - naluajuegos.com
 - nidogeek.com
+- laberintojuegos.com
 
 
 Please raise an Issue if you find a bug or have any suggestion!

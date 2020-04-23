@@ -32,11 +32,6 @@ export default function Index() {
           alt='El Reino'
           href='https://www.elreino.mx'
         />
-        {/* <Image
-          logoSrc='GeekyStuff.png'
-          alt='Geeky Stuff'
-          href='https://geekystuff.mx'
-        /> */}
         <Image
           logoSrc='JuegaMas.png'
           alt='Juega+ Jugueterías'
@@ -46,6 +41,11 @@ export default function Index() {
           logoSrc='KawaGames.jpg'
           alt='KawaGames'
           href='https://kawagames.com.mx'
+        />
+        <Image
+          logoSrc='LaberintoJuegos.png'
+          alt='Laberinto de Juegos'
+          href='https://laberintojuegos.com'
         />
         <Image
           logoSrc='NaluaJuegos.jpg'

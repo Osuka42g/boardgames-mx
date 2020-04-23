@@ -4,10 +4,10 @@ import { promiseAllTimeout, validateItemsObject } from '../utils';
 import { isCached, getCache, putCache, } from '../utils/cache';
 import logger from '../utils/logger';
 
-// import geekyStuff from './geekyStuff';
 import elReino from './elReino';
 import elDuende from './elDuende';
 import juegaMas from './juegaMas';
+import laberintoJuegos from './laberintoJuegos';
 import naluaJuegos from './naluaJuegos';
 import nidoGeek from './nidoGeek';
 import kawaGames from './kawaGames';
@@ -25,10 +25,10 @@ const getItems = async item => {
     };
 
     const stores = [
-      // geekyStuff,
       elReino,
       elDuende,
       juegaMas,
+      laberintoJuegos,
       naluaJuegos,
       nidoGeek,
       kawaGames,
