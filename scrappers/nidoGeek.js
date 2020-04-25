@@ -6,7 +6,7 @@ const log = logger('Fetch NidoGeek');
 
 const vendor = 'Nido Geek';
 
-const parseItem = item => ({
+const parseItem = (item = {}) => ({
   title: item.title,
   image: item.image,
   shopURL: item.shopURL,
@@ -37,7 +37,6 @@ const nidoGeek = async query => {
         price,
       });
 
-      console.log('item :', item);
       items.push(item);
     });
 
